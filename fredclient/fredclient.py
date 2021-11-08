@@ -57,7 +57,7 @@ class FREDParameters:
     def isSemanticSubgraph(self):
         return self.__semantic_subgraph
         
-    def setSemanticSubgraph(self, semantic_subgraph : bool)
+    def setSemanticSubgraph(self, semantic_subgraph : bool):
         self.__semantic_subgraph = semantic_subgraph
         
     def to_dict(self):
