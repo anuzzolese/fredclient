@@ -1,0 +1,1 @@
+from fredclient.fredclient import *
