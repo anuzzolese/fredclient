@@ -15,7 +15,7 @@ class FREDParameters:
                  prefix : str = FREDDefaults.DEFAULT_FRED_PREFIX,
                  namespace : str = FREDDefaults.DEFAULT_FRED_NAMESPACE,
                  ctxNamespaces : str = False,
-                 wsd : bool = True
+                 wsd : bool = True,
                  semantic_subgraph : bool = True):
         self.__output : Graph = output
         self.__format : str = format
