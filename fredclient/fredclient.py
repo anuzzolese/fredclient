@@ -7,6 +7,59 @@ class FREDDefaults:
   AVAILABLE_SERIALIZATIONS = [DEFAULT_SERIALIZATION, "trix"]
   DEFAULT_FRED_PREFIX = "fred:"
   DEFAULT_FRED_NAMESPACE = "http://www.ontologydesignpatterns.org/ont/fred/"
+  
+  ROLES = {
+    "agentive":[
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Agent",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Actor",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Actor1",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Actor2",
+      "http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#agent",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Cause",
+      "http://www.ontologydesignpatterns.org/ont/boxer/title.owl#agent"
+   ],
+   "passive":[
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Patient",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Patient1",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Patient2",
+      "http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#patient",
+      "http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#recipient",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Beneficiary",
+      "http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#declaration",
+      "http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#declaration",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Predicate",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Product",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Proposition",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Recipient",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Topic",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Value",
+      "http://www.ontologydesignpatterns.org/ont/boxer/title.owl#patient",
+      "http://www.ontologydesignpatterns.org/ont/boxer/title.owl#recipient"
+   ],
+   "conditional_agentive":[
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Theme",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Theme1",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Theme2",
+      "http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#theme",
+      "http://www.ontologydesignpatterns.org/ont/boxer/title.owl#theme",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Experiencer"
+   ],
+   "oblique":[
+      "http://www.ontologydesignpatterns.org/ont/fred/domain.owl#locatedIn",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Asset",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Attribute",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Destination",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Extent",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Instrument",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Location",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Material",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Oblique",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Oblique1",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Oblique2",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Source",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Stimulus",
+      "http://www.ontologydesignpatterns.org/ont/vn/abox/role/Time"
+   ]}
 
 class FREDParameters:
     def __init__(self, 
