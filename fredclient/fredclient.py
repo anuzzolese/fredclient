@@ -62,9 +62,9 @@ class FREDParameters:
         
     def to_dict(self):
         return {'format': self.__format,
-            'namespace' = self.__namespace,
-            'wsd' = self.__wsd,
-            'semantic_subgraph' = self.__semantic_subgraph}
+            'namespace': self.__namespace,
+            'wsd': self.__wsd,
+            'semantic_subgraph': self.__semantic_subgraph}
 
 class FREDClient:
     def __init__(self, fred_endpoint : str, requestMimeType : str = FREDDefaults.DEFAULT_SERIALIZATION):
