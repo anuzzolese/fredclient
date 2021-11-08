@@ -15,12 +15,14 @@ class FREDParameters:
                  prefix : str = FREDDefaults.DEFAULT_FRED_PREFIX,
                  namespace : str = FREDDefaults.DEFAULT_FRED_NAMESPACE,
                  ctxNamespaces : str = False,
-                 wsd : bool = True):
+                 wsd : bool = True
+                 semantic_subgraph : bool, True):
         self.__output : Graph = output
         self.__format : str = format
         self.__namespace = namespace
         self.__ctxNamespaces = ctxNamespaces,
         self.__wsd = wsd
+        self.__semantic_subgraph = semantic_subgraph
     
     def getOutput(self) -> Graph:
         return self.__output
@@ -50,7 +52,19 @@ class FREDParameters:
         return self.__wsd
     
     def setWSD(self, wsd : bool):
-        self.__wsd = wsd 
+        self.__wsd = wsd
+        
+    def isSemanticSubgraph(self):
+        return self.__semantic_subgraph
+        
+    def setSemanticSubgraph(self, semantic_subgraph : bool)
+        self.__semantic_subgraph = semantic_subgraph
+        
+    def to_dict(self):
+        return {'format': self.__format,
+            'namespace' = self.__namespace,
+            'wsd' = self.__wsd,
+            'semantic_subgraph' = self.__semantic_subgraph}
 
 class FREDClient:
     def __init__(self, fred_endpoint : str, requestMimeType : str = FREDDefaults.DEFAULT_SERIALIZATION):
@@ -59,12 +73,10 @@ class FREDClient:
     
     def execute_request(self, text : str, fredParameters : FREDParameters = FREDParameters()) -> Graph:
 
+        params = fredParameters.to_dict()
+        params.update({'text': text})
         
-        params = {'text': text, 
-             'namespace': fredParameters.getNamespace(),
-             'wsd': fredParameters.isWSD()}
-        
-       	params = urllib.parse.urlencode(params)
+        params = urllib.parse.urlencode(params)
         
         #print(self.__requestMimeType)
         #print(self.__fred_endpoint % params)
