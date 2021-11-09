@@ -132,7 +132,7 @@ class FREDClient:
         params = urllib.parse.urlencode(params)
         
         #print(self.__requestMimeType)
-        print(self.__fred_endpoint % params)
+        #print(self.__fred_endpoint % params)
         graph=Graph()
         request = urllib.request.Request(self.__fred_endpoint % params, headers={"Accept": self.__requestMimeType})
         try:
