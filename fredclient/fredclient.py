@@ -120,9 +120,10 @@ class FREDParameters:
             'semantic-subgraph': self.__semantic_subgraph}
 
 class FREDClient:
-    def __init__(self, fred_endpoint : str, requestMimeType : str = FREDDefaults.DEFAULT_SERIALIZATION):
+    def __init__(self, fred_endpoint : str, requestMimeType : str = FREDDefaults.DEFAULT_SERIALIZATION, key : str = None):
         self.__fred_endpoint : str = fred_endpoint + "?%s"
         self.__requestMimeType : str = requestMimeType
+        self.__key : str = key
     
     def execute_request(self, text : str, fredParameters : FREDParameters = FREDParameters()) -> Graph:
 
@@ -134,7 +135,12 @@ class FREDClient:
         #print(self.__requestMimeType)
         #print(self.__fred_endpoint % params)
         graph=Graph()
-        request = urllib.request.Request(self.__fred_endpoint % params, headers={"Accept": self.__requestMimeType})
+        
+        headers={"Accept": self.__requestMimeType}
+        if self.__key:
+            headers.update({"Authorization": f"Bearer {self.__key}"})
+        
+        request = urllib.request.Request(self.__fred_endpoint % params, headers=headers)
         try:
             response = urllib.request.urlopen(request)
             output = response.read()
